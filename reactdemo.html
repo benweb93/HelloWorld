@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <title>React Tutorial</title>
+    <script src="./react-15.2.1/build/react.js"></script>
+    <script src="./react-15.2.1/build/react-dom.js"></script>
+    <script src="./react-15.2.1/build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="content">
+	<div id="container"></div>
+	</div>
+    <script type="text/babel">
+//     var HelloWorld = React.createClass({
+//     render : function(){
+// 		return <h1>hello world!</h1>
+//
+// 	}
+// });
+// React.render(<HelloWorld></HelloWlorld>,document.body);
+var Hello = React.createClass({
+  displayName: 'Hello',
+  render: function() {
+    return React.createElement("div", null, "Hello ", this.props.name);
+  }
+});
+
+ReactDOM.render(
+  React.createElement(Hello, {name: "World"}),
+  document.getElementById('container')
+);
+    </script>
+  </body>
+</html>
